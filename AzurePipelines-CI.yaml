@@ -7,7 +7,7 @@ steps:
 - task: Maven@3
   displayName: 'Maven app/pom.xml'
   inputs:
-    mavenPomFile: 'Maven app/pom.xml'
+    mavenPomFile: 'app/pom.xml'
     codeCoverageToolOption: JaCoCo
 
 - task: CopyFiles@2
