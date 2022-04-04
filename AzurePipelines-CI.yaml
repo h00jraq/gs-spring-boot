@@ -1,13 +1,14 @@
 pool:
-  vmImage: 'ubuntu-16.04' # Hosted Ubuntu 1604
+  name: Azure Pipelines
   demands: maven
+
 
 steps:
 - task: Maven@3
   displayName: 'Maven app/pom.xml'
   inputs:
-    mavenPomFile: 'app/pom.xml'
-    codeCoverageToolOption: Cobertura
+    mavenPomFile: 'Maven app/pom.xml'
+    codeCoverageToolOption: JaCoCo
 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
